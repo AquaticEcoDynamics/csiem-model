@@ -1,0 +1,17 @@
+! Fremantle___________________________________________________________
+bc == WL,2,..\..\BCs\Tide\FHR_Inflow_v3.csv
+bc header ==  ISOTime,wl,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.3,1,0.3,0.5,0.9,0.7,0.2,0.5,0.167,0.125,0.333,2.292,1.25,0.00754717
+end bc
+
+bc == Q,3, ..\..\BCs\Flow\Canning_Inflow_v2.csv
+  bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+  bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.3,1,0.3,0.5,0.9,0.7,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == WL,1,..\..\BCs\Tide\NAR_Inflow_v2.csv
+bc header ==  ISOTime,wl,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.3,1,0.3,0.5,0.9,0.7,0.2,0.5,0.167,0.125,0.333,2.292,1.25,0.00754717
+end bc
+
+
