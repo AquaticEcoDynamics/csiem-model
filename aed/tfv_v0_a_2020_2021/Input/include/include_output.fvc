@@ -5,14 +5,14 @@ output dir == ..\..\Output\
 write restart dt == 120.
 
 output == netcdf
-  output parameters == h,v,w,D,Sal,Temp ,WQ_DIAG_TOT_TN,WQ_DIAG_TOT_TP,WQ_OXY_OXY,WQ_DIAG_PHY_GPP,WQ_DIAG_PHY_TCHLA,
+  output parameters == h,v,w,D,Sal,Temp !,WQ_DIAG_TOT_TN,WQ_DIAG_TOT_TP,WQ_OXY_OXY,WQ_DIAG_PHY_GPP,WQ_DIAG_PHY_TCHLA,
   output interval   == 14400.0
   output compression == 1
 end output
 
 output == netcdf
   suffix == ALL
-  output parameters == h,v,w,D,Sal,Temp,trace_1,wq_all,wq_diag_all
+  output parameters == h,v,w,D,Sal,Temp,trace_1!,wq_all,wq_diag_all
   output interval   == 14400.0
   output compression == 1
 end output
