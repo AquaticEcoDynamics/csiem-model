@@ -150,7 +150,7 @@ end bc
 !  bc scale == 2.5
 !end bc
 
-bc == PRECIP, ..\BCs\Met\tfv_rain_GARDEN_ISLAND_HSF.csv
+bc == PRECIP, ..\BCs\Met\tfv_rain_GI.csv
   bc header == ISOTime,Precip
 end bc
 
