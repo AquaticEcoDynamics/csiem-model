@@ -8,7 +8,7 @@ Hardware == GPU
 time format == ISODATE
 reference time == 01/01/2001
 start time == 01/01/2021 00:00:00
-end time == 01/01/2022 00:00:00
+end time == 01/02/2021 00:00:00
 cfl external == 0.90
 cfl internal == 0.90
 timestep limits == 0.1, 5.
