@@ -2,7 +2,7 @@
 ! SWAN-CANNING ESTUARY REPSONSE MODEL V3
 !_________________________________________________________________
 !
-!Hardware == GPU
+Hardware == GPU
 !TIME COMANDS
 !_________________________________________________________________
 time format == ISODATE
