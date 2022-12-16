@@ -35,7 +35,7 @@ vertical gradient limiter == MC
 bottom drag model == ks
 equation of state == UNESCO
 
-vertical mixing model == external !parametric !constant
+vertical mixing model == constant !parametric !constant
 !external turbulence model dir == ..\External\GOTM\
 !waterqualitymodel == EXTERNAL
 !external water quality model dir == ..\External\AED\
