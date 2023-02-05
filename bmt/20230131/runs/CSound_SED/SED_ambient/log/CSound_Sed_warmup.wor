@@ -1,0 +1,8 @@
+!Workspace
+!Version 600
+!Charset WindowsLatin1
+!Contains GIS input layers from TUFLOW simulation CSound_Sed_warmup
+! Non-MapInfo .tab Layer "..\..\..\..\model\gis\nodestrings\2d_ns_Cockburn_Sound_005_L.shp"
+! Non-MapInfo .tab Layer "..\..\..\..\model\gis\material\Cockburn_Sound_Material_005.shp"
+! Non-MapInfo .tab Layer "..\..\..\..\model\gis\material\2d_mat_Sed_001_R.shp"
+! Non-MapInfo .tab Layer "..\..\..\..\model\gis\material\2d_mat_Sed_002_R.shp"

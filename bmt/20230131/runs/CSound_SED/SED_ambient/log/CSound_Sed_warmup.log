@@ -1,0 +1,1053 @@
+
+***************************** TUFLOWFV *****************************
+
+Build version: 2020.03.105
+Build date: 28/07/2021 13:10
+Build platform: Windows
+Build architecture:  x86-64
+Compiler version: Ifort 2021.3.0
+Build precision: single
+NVidia GPU enabled: Cuda v10.2.89
+GIS Module Version: 2020-07-PD
+
+********************************************************************
+
+Computer name: WEBR1813
+User name: Gayan.Gunaratne
+Execution timestamp: 31/01/2023 14:17:54
+
+
+Initialising TUFLOW Licence Settings...
+
+No TUFLOW licence Settings files found.  Default settings applied.
+WIBU Retry Time == 60  ! Seconds.  Values less than 1 are set to 1.  Default = 60.
+WIBU Retry Count == 0  ! Number of times to retry for a licence at start of simulation.  Use -1 for indefinitely.  Default = 0.
+WIBU Dongles Only == OFF  ! If set to ON, searches for WIBU dongles only.  Default is OFF.
+
+Attempting to process input control file:
+Trying to open file: CSound_Sed_warmup.fvc ... OK. File unit: 101
+TIME FORMAT == ISO DATE & TIME
+Trying to open file: ..\..\..\includes\ROMS_20130101_20131231.fvc ... OK. File unit: 102
+Closing file unit: 102
+Trying to open file: ..\..\..\includes\BARRA_20130101_20131231.fvc ... OK. File unit: 102
+Closing file unit: 102
+Trying to open file: ..\..\..\includes\WAVE_20130101_20131231.fvc ... OK. File unit: 102
+Closing file unit: 102
+Trying to open file: ..\..\..\includes\Discharge_and_Intake.fvc ... OK. File unit: 102
+Closing file unit: 102
+Start echoing input file:
+HARDWARE TARGET == GPU
+GIS FORMAT == SHP
+SHP PROJECTION == ..\..\..\model\gis\shp\projection.prj
+GIS PROJECTION CHECK == WARNING
+SPHERICAL == .TRUE.
+INCLUDE SALINITY == .TRUE.
+COUPLE SALINITY DENSITY == .TRUE.
+INCLUDE TEMPERATURE == .TRUE.
+COUPLE TEMPERATURE DENSITY == .TRUE.
+INCLUDE SEDIMENT == .TRUE.
+COUPLE SEDIMENT DENSITY == .FALSE.
+INCLUDE HEAT == .TRUE.
+MOMENTUM MIXING MODEL == SMAGORINSKY
+SCALAR MIXING MODEL == SMAGORINSKY
+VERTICAL MIXING MODEL == EXTERNAL
+EXTERNAL TURBULENCE MODEL DIR == ..\..\..\external\GOTM\
+BOTTOM DRAG MODEL == KS
+SPATIAL ORDER == 2, 2
+HORIZONTALGRADIENTLIMITER == LCD
+CFL EXTERNAL ==   0.7000000
+CFL INTERNAL ==   0.7000000
+START TIME == 02/01/2013 00:00:00
+END TIME == 31/12/2013 00:00:00
+TIMESTEP LIMITS ==   0.1000000    ,    10.00000
+TURBULENCE UPDATE DT ==    300.0000
+DISPLAY DT ==    900.0000
+STABILITY LIMITS ==    17.00000    ,    10.00000
+CELL DRY/WET DEPTHS ==   0.5000000E-02,   0.1000000
+CELL 3D DEPTH ==    1.000000
+G ==    9.810000
+GLOBAL BOTTOM ROUGHNESS ==   0.5000000E-01
+REFERENCE SALINITY ==    35.00000
+REFERENCE TEMPERATURE ==    20.00000
+REFERENCE DENSITY ==    1030.000
+KINEMATIC VISCOSITY ==   0.1000000E-05
+GLOBAL HORIZONTAL EDDY VISCOSITY (SMAG COEFF) ==   0.5000000
+GLOBAL HORIZONTAL EDDY VISCOSITY LIMITS ==    1.000000    ,    9999.000
+GLOBAL HORIZONTAL SCALAR DIFFUSIVITY (SMAG COEFF) ==   0.2000000
+GLOBAL HORIZONTAL DIFFUSIVITY LIMITS ==    1.000000    ,    9999.000
+GLOBAL VERTICAL EDDY VISCOSITY LIMITS ==   0.1000000E-03,    1.000000
+GLOBAL VERTICAL SCALAR DIFFUSIVITY LIMITS ==    0.000000,    1.000000
+ECHO GEOMETRY == .TRUE.
+SEDIMENT CONTROL FILE == CSound_Sed_warmup.fvsed
+Trying to open file: CSound_Sed_warmup.fvsed ... OK. File unit: 102
+Closing file unit: 102
+GEOMETRY2D == ..\..\..\model\geo\mesh\Cockburn_Sound_Mesh_008.2dm
+READ GIS NODESTRING == ..\..\..\model\gis\nodestrings\2d_ns_Cockburn_Sound_005_L.shp
+VERTICAL MESH TYPE == Z
+LAYER FACE FILE == ..\..\..\model\geo\z_layer\SEP_zlayer_0p25.csv
+SURFACE SIGMA LAYERS == 4
+MINIMUM LAYER THICKNESS ==   0.5000000
+READ GIS MAT == ..\..\..\model\gis\material\Cockburn_Sound_Material_005.shp
+READ GIS MAT == ..\..\..\model\gis\material\2d_mat_Sed_001_R.shp
+READ GIS MAT == ..\..\..\model\gis\material\2d_mat_Sed_002_R.shp
+MATERIAL == 1,3
+  BOTTOM ROUGHNESS ==   0.2000000E-01
+  SPATIAL RECONSTRUCTION == .FALSE.
+END MATERIAL
+MATERIAL == 2,21,22,23
+  BOTTOM ROUGHNESS ==   0.2000000E-02
+  SPATIAL RECONSTRUCTION == .TRUE.
+END MATERIAL
+MATERIAL == 4,24,25,26,27
+  BOTTOM ROUGHNESS ==   0.2000000E-01
+  SPATIAL RECONSTRUCTION == .TRUE.
+END MATERIAL
+MATERIAL == 31,32
+  BOTTOM ROUGHNESS ==   0.1700000E-01
+  SPATIAL RECONSTRUCTION == .TRUE.
+END MATERIAL
+MATERIAL == 33
+  BOTTOM ROUGHNESS ==   0.1200000E-01
+  SPATIAL RECONSTRUCTION == .TRUE.
+END MATERIAL
+Trying to open file: ..\..\..\includes\ROMS_20130101_20131231.fvc ... OK. File unit: 102
+GRID DEFINITION FILE == ..\..\..\includes\..\bc_dbase\ROMS\ROMS_UTC+8_20130101_20131231_FILLED.nc
+GRID DEFINITION VARIABLES ==  LON, LAT, DEPTH
+  GRID VERTICAL COORDINATE TYPE == DEPTH
+GRID DEFINITION LABEL == ROMS
+BOUNDARY GRIDMAP == .TRUE.
+END GRID
+BC == OBC_GRID, ROMS, ..\..\..\includes\..\bc_dbase\ROMS\ROMS_UTC+8_20130101_20131231_FILLED.nc
+  SUB-TYPE == 6
+  BC HEADER ==  time, surf_el, water_u, water_v, salinity, water_temp
+  UPDATE DT ==    900.0000
+  BC TIME UNITS == HOURS
+BC REFERENCE TIME == 01/01/1990 00:00:00
+  BC OFFSET ==  -0.4200000,   0.000000,   0.000000,   0.000000
+END BC
+Closing file unit: 102
+Trying to open file: ..\..\..\includes\BARRA_20130101_20131231.fvc ... OK. File unit: 102
+GRID DEFINITION FILE == ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc
+GRID DEFINITION VARIABLES ==  LONGITUDE, LATITUDE
+GRID DEFINITION LABEL == BARRA
+END GRID
+BC == MSLP_GRID, BARRA, ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc
+  BC HEADER ==  local_time, mslp
+  UPDATE DT ==    3600.000
+  BC TIME UNITS == HOURS
+BC REFERENCE TIME == 01/01/1990 00:00:00
+  BC DEFAULT ==             NaN
+  BC SCALE ==   0.1000000E-01
+END BC
+BC == LW_RAD_GRID, BARRA, ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc
+  BC HEADER ==  local_time, lwsfcdown
+  UPDATE DT ==    3600.000
+  BC TIME UNITS == HOURS
+BC REFERENCE TIME == 01/01/1990 00:00:00
+  BC DEFAULT ==             NaN
+END BC
+BC == SW_RAD_GRID, BARRA, ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc
+  BC HEADER ==  local_time, swsfcdown
+  UPDATE DT ==    3600.000
+  BC TIME UNITS == HOURS
+BC REFERENCE TIME == 01/01/1990 00:00:00
+  BC DEFAULT ==             NaN
+END BC
+BC == AIR_TEMP_GRID, BARRA, ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc
+  BC HEADER ==  local_time, temp_scrn
+  UPDATE DT ==    3600.000
+  BC TIME UNITS == HOURS
+BC REFERENCE TIME == 01/01/1990 00:00:00
+  BC DEFAULT ==             NaN
+  BC OFFSET ==   -273.1500
+END BC
+BC == W10_GRID, BARRA, ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc
+  BC HEADER ==  local_time, uwnd10m, vwnd10m
+  UPDATE DT ==    3600.000
+  BC TIME UNITS == HOURS
+BC REFERENCE TIME == 01/01/1990 00:00:00
+  BC DEFAULT ==             NaN
+END BC
+BC == PRECIP_GRID, BARRA, ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc
+  BC HEADER ==  local_time, precip_rate
+  UPDATE DT ==    3600.000
+  BC TIME UNITS == HOURS
+BC REFERENCE TIME == 01/01/1990 00:00:00
+  BC DEFAULT ==             NaN
+  BC SCALE ==   0.2400000E-01
+END BC
+BC == REL_HUM_GRID, BARRA, ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc
+  BC HEADER ==  local_time, relhum
+  UPDATE DT ==    3600.000
+  BC TIME UNITS == HOURS
+BC REFERENCE TIME == 01/01/1990 00:00:00
+  BC DEFAULT ==             NaN
+END BC
+Closing file unit: 102
+Trying to open file: ..\..\..\includes\WAVE_20130101_20131231.fvc ... OK. File unit: 102
+GRID DEFINITION FILE == ..\..\..\includes\..\bc_dbase\waves\HIND_2013.nc
+GRID DEFINITION VARIABLES ==  XP, YP
+GRID DEFINITION LABEL == WAVE_GRID_NEST
+END GRID
+BC == WAVE, WAVE_GRID_NEST, ..\..\..\includes\..\bc_dbase\waves\HIND_2013.nc
+  BC HEADER ==  time, Hsig, TPsmoo, Dir, Ubot, TmBot, WForce_x, WForce_y, Depth
+  BC SCALE ==    1.000000,   1.000000,   1.000000,   1.000000,   1.000000,   1.000000,   1.000000
+  UPDATE DT ==    600.0000
+BC REFERENCE TIME == 01/01/1990 00:00:00
+  BC TIME UNITS == HOURS
+END BC
+Closing file unit: 102
+BC == WL, 2, ..\..\..\bc_dbase\swan_river\NAR_Inflow.csv
+  BC HEADER ==  ISOTime, wl, Sal, Temp, zeroes, zeroes, zeroes, ones
+END BC
+BC == WL, 3, ..\..\..\bc_dbase\swan_river\Canning_Inflow_Tide.csv
+  BC HEADER ==  ISOTime, wl, Sal, Temp, zeroes, zeroes, zeroes, ones
+END BC
+Trying to open file: ..\..\..\includes\Discharge_and_Intake.fvc ... OK. File unit: 102
+BC == QC,    115.7562    ,   -32.23261    , ..\..\..\includes\..\bc_dbase\discharges\TiWest20130101_20140101.csv
+  BC HEADER ==  Date, Q, Salt, Temp, dummy, dummy, dummy, Trace_1
+  VERTICAL COORDINATE TYPE == DEPTH
+  VERTICAL DISTRIBUTION FILE == ..\..\..\includes\..\bc_dbase\discharges\DischargeDepth_001.csv
+END BC
+BC == QC,    115.7602    ,   -32.21765    , ..\..\..\includes\..\bc_dbase\discharges\BP_Refinery20130101_20140101.csv
+  BC HEADER ==  Date, Q, Salt, Temp, dummy, dummy, dummy, Trace_1
+  VERTICAL COORDINATE TYPE == DEPTH
+  VERTICAL DISTRIBUTION FILE == ..\..\..\includes\..\bc_dbase\discharges\DischargeDepth_001.csv
+END BC
+BC == QC,    115.7725    ,   -32.19766    , ..\..\..\includes\..\bc_dbase\discharges\KPS_A_B20130101_20140101.csv
+  BC HEADER ==  Date, Q, Salt, Temp, dummy, dummy, dummy, Trace_1
+  VERTICAL COORDINATE TYPE == DEPTH
+  VERTICAL DISTRIBUTION FILE == ..\..\..\includes\..\bc_dbase\discharges\DischargeDepth_001.csv
+END BC
+BC == QC,    115.7722    ,   -32.19820    , ..\..\..\includes\..\bc_dbase\discharges\KPS_C_CPS20130101_20140101.csv
+  BC HEADER ==  Date, Q, Salt, Temp, dummy, dummy, dummy, Trace_1
+  VERTICAL COORDINATE TYPE == DEPTH
+  VERTICAL DISTRIBUTION FILE == ..\..\..\includes\..\bc_dbase\discharges\DischargeDepth_001.csv
+END BC
+BC == QC,    115.7533    ,   -32.20003    , ..\..\..\includes\..\bc_dbase\discharges\PSDP20130101_20140101.csv
+  BC HEADER ==  Date, Q, Salt, Temp, dummy, dummy, dummy, Trace_1
+  VERTICAL COORDINATE TYPE == DEPTH
+  VERTICAL DISTRIBUTION FILE == ..\..\..\includes\..\bc_dbase\discharges\DischargeDepth_001.csv
+END BC
+BC == QC,    115.7551    ,   -32.22749    , ..\..\..\includes\..\bc_dbase\intakes\CSound_Apr2013_PRP_BP_Intake.csv
+  BC HEADER ==  DATE, Q
+  BC SCALE ==   -1.000000
+  VERTICAL COORDINATE TYPE == HEIGHT
+  VERTICAL DISTRIBUTION FILE == ..\..\..\includes\..\bc_dbase\intakes\IntakeExtractionHeight_001.csv
+END BC
+BC == QC,    115.7708    ,   -32.19863    , ..\..\..\includes\..\bc_dbase\intakes\CSound_Apr2013_PRP_VerveSouth_Intake.csv
+  BC HEADER ==  DATE, Q
+  BC SCALE ==   -1.000000
+  VERTICAL COORDINATE TYPE == HEIGHT
+  VERTICAL DISTRIBUTION FILE == ..\..\..\includes\..\bc_dbase\intakes\IntakeExtractionHeight_001.csv
+END BC
+BC == QC,    115.7718    ,   -32.19619    , ..\..\..\includes\..\bc_dbase\intakes\CSound_Apr2013_PRP_VerveNorth_Intake.csv
+  BC HEADER ==  DATE, Q
+  BC SCALE ==   -1.000000
+  VERTICAL COORDINATE TYPE == HEIGHT
+  VERTICAL DISTRIBUTION FILE == ..\..\..\includes\..\bc_dbase\intakes\IntakeExtractionHeight_001.csv
+END BC
+Closing file unit: 102
+INITIAL CONDITION == OGCM
+INITIAL WATER LEVEL ==   0.5000000
+INITIAL CONDITION == QUIESCENT
+OUTPUT DIR == ..\..\..\results\
+OUTPUT == NETCDF
+  SUFFIX == HYDROS
+  OUTPUT PARAMETERS ==  H, V, D, TEMP, SAL,
+  OUTPUT INTERVAL ==    3600.000
+  COMPRESSION == .TRUE.
+END OUTPUT
+OUTPUT == NETCDF
+  SUFFIX == SED
+  OUTPUT PARAMETERS ==  TSS, BED_MASS, SED_1, SED_2, TAUC, TAUW, TAUCW, SUSPLOAD_TOTAL, WVHT, WVPER,
+  OUTPUT INTERVAL ==    3600.000
+  COMPRESSION == .TRUE.
+END OUTPUT
+OUTPUT == POINTS
+  OUTPUT POINTS FILE == ..\..\..\model\output_points\extraction_points.csv
+  VERTICAL AVERAGING == SIGMA-RANGE   0.000000     to    1.000000
+  OUTPUT PARAMETERS ==  H, V, D, TSS, BED_MASS, SED_1, SED_2, TAUC, TAUW, TAUCW, SUSPLOAD_TOTAL, WVHT, WVPER,
+  OUTPUT INTERVAL ==    3600.000
+END OUTPUT
+OUTPUT == FLUX
+  OUTPUT INTERVAL ==    3600.000
+END OUTPUT
+WRITE RESTART DT ==    24.00000
+Closing file unit: 101
+Finished echoing input file.
+
+Attempting to process Sediment Transport Module control file:
+Trying to open file: CSound_Sed_warmup.fvsed ... OK. File unit: 101
+Start echoing input file:
+UPDATE TIMESTEP ==    900.0000
+MORPHOLOGICAL COUPLING == .FALSE.
+MORFAC ==    1.000000
+CONCENTRATION PROFILE MODEL == DEFAULT
+BED ROUGHNESS MODEL == KS
+BED ROUGHNESS PARAMETERS ==    0.2000000E-02   0.1500000E-02
+EROSION DEPTH LIMITS ==    0.5000000E-01   0.1000000
+DEPOSITION DEPTH LIMITS ==    0.1000000E-01   0.5000000E-01
+GROUP == SAND
+  D50 ==   0.2500000E-03
+  PARTICLE DENSITY ==    2650.000
+  SETTLING MODEL == CONSTANT
+  SETTLING PARAMETERS ==    0.1000000E-01
+  DEPOSITION MODEL == WS0
+  CRITICAL STRESS MODEL == SOULSBY_EGIAZAROFF
+  EROSION MODEL == VANRIJN84
+  EROSION PARAMETERS ==    0.1500000E-01   -1.000000
+  BEDLOAD MODEL == NONE
+END GROUP
+GROUP == FINES
+  D50 ==   0.3000000E-04
+  PARTICLE DENSITY ==    2650.000
+  SETTLING MODEL == CONSTANT
+  SETTLING PARAMETERS ==    0.1000000E-03
+  DEPOSITION MODEL == KRONE
+  DEPOSITION PARAMETERS ==    0.1800000
+  EROSION MODEL == MEHTA
+  EROSION PARAMETERS ==    0.7000000E-01   0.2000000    1.000000
+  BEDLOAD MODEL == NONE
+END GROUP
+MATERIAL == DEFAULT
+  BED LOAD SCALE ==    1.000000
+  SUSPENDED LOAD SCALE ==    1.000000
+  NLAYER == 1
+  LAYER == 1
+    DRYDENSITY ==     800.0000    800.0000
+    MASS ==     380.0000    20.00000
+  END LAYER
+END MATERIAL
+MATERIAL == 26,27
+  BED LOAD SCALE ==    1.000000
+  SUSPENDED LOAD SCALE ==    1.000000
+  NLAYER == 1
+  LAYER == 1
+    DRYDENSITY ==     800.0000    800.0000
+    MASS ==     392.0000    8.000000
+  END LAYER
+END MATERIAL
+MATERIAL == 24,25,4
+  BED LOAD SCALE ==    1.000000
+  SUSPENDED LOAD SCALE ==    1.000000
+  NLAYER == 1
+  LAYER == 1
+    DRYDENSITY ==     800.0000    800.0000
+    MASS ==     360.0000    40.00000
+  END LAYER
+END MATERIAL
+MATERIAL == 23
+  BED LOAD SCALE ==    1.000000
+  SUSPENDED LOAD SCALE ==    1.000000
+  NLAYER == 1
+  LAYER == 1
+    DRYDENSITY ==     800.0000    800.0000
+    MASS ==     120.0000    280.0000
+  END LAYER
+END MATERIAL
+MATERIAL == 21,22
+  BED LOAD SCALE ==    1.000000
+  SUSPENDED LOAD SCALE ==    1.000000
+  NLAYER == 1
+  LAYER == 1
+    DRYDENSITY ==     800.0000    800.0000
+    MASS ==     40.00000    360.0000
+  END LAYER
+END MATERIAL
+WRITE RESTART DT ==    24.00000
+Finished echoing input file.
+Closing file unit: 101
+
+  Checking sediment module parameters...
+
+    Profile model is "DEFAULT".
+    Bed roughness model is "KS".
+    Bedshear model is "DEFAULT".
+    Bed slumping model is "NONE".
+    "External" model is "NONE".
+
+  Processing group "SAND"...
+    Settling model is "CONSTANT".
+    Erosion model is "VANRIJN84".
+    Deposition model is "WS0".
+    Bedload model is "NONE".
+    Consolidation model is "NONE".
+    Critical stress model is "SOULSBY_EGIAZAROFF".
+  Finished processing group "SAND".
+
+  Processing group "FINES"...
+    Settling model is "CONSTANT".
+    Erosion model is "MEHTA".
+    Deposition model is "KRONE".
+    Bedload model is "NONE".
+    Consolidation model is "NONE".
+    Critical stress model is "NONE".
+  Finished processing group "FINES".
+
+  Processing material blocks...
+    Processing default material.
+    Processing material ID/s: 26 27
+    Processing material ID/s: 24 25 4
+    Processing material ID/s: 23
+    Processing material ID/s: 21 22
+  Finished processing material blocks.
+
+  Finished checking sediment module parameters.
+
+
+Sediment module control file succesfully processed.
+
+
+
+Successfully processed input control files.
+
+Initialising TUFLOW-FV engine license:
+
+Searching for a BMT WIBU Hardware Licence...
+
+TUFLOW FV Engine            Dongle 5868523  Expiry 2023/03/29  Local   2 of    4 (2 remaining)
+Successfully found WIBU TUFLOW-FV engine licence
+
+Initialising TUFLOW-FV simulation threads:
+TUFLOW FV Threads (1)       Dongle 5868523  Expiry 2023/03/29  Local   2 of   16 (14 remaining)
+Successfully initialised 1 threads.
+
+Initialising requested TUFLOW-FV module license/s:
+TUFLOW FV 3D Module         Dongle 5868523  Expiry 2023/03/29  Local   2 of    4 (2 remaining)
+TUFLOW FV AD Module         Dongle 5868523  Expiry 2023/03/29  Local   2 of    4 (2 remaining)
+TUFLOW FV MOR Module        Dongle 5868523  Expiry 2023/03/29  Local   2 of    4 (2 remaining)
+TUFLOW FV GPU Cards (1)     Dongle 5868523  Expiry 2023/03/29  Local   2 of    4 (2 remaining)
+Successful.
+
+GIS Projection being extracted from ..\..\..\model\gis\shp\projection.prj
+Trying to open file: ..\..\..\model\gis\shp\projection.prj ... OK. File unit: 101
+Closing file unit: 101
+Attempting to build model domain object/s:
+
+Processing mesh geometry file/s:
+Opening GIS Layer: ..\..\..\model\gis\nodestrings\2d_ns_Cockburn_Sound_005_L.shp
+GIS Layer assigned ID of 1
+2 DBF Fields (Name [#/Type/Length]): ID [1/N/8]  Flags [2/C/3]  
+
+Closing GIS Layer 1 [..\..\..\model\gis\nodestrings\2d_ns_Cockburn_Sound_005_L.shp]...
+Reading 2dm mesh file...
+Trying to open file: ..\..\..\model\geo\mesh\Cockburn_Sound_Mesh_008.2dm ... OK. File unit: 101
+Closing file unit: 101
+Finished reading 2dm mesh file.
+
+Processing mesh face connections...
+Finished processing mesh face connections.
+
+Processing external nodestrings...
+External Nodestring GIS File = ..\..\..\model\gis\nodestrings\2d_ns_Cockburn_Sound_005_L.shp.Opening GIS Layer: ..\..\..\model\gis\nodestrings\2d_ns_Cockburn_Sound_005_L.shp
+GIS Layer assigned ID of 1
+2 DBF Fields (Name [#/Type/Length]): ID [1/N/8]  Flags [2/C/3]  
+
+Closing GIS Layer 1 [..\..\..\model\gis\nodestrings\2d_ns_Cockburn_Sound_005_L.shp]...
+Vertices in nodestring, 75.
+External nodestring 1 (ID = 1) is OK.
+
+Vertices in nodestring, 2.
+External nodestring 2 (ID = 2) is OK.
+
+Vertices in nodestring, 3.
+External nodestring 3 (ID = 3) is OK.
+
+Finished processing external nodestrings.
+
+2dm and externally specified nodestring numbering is OK.
+
+Opening GIS Layer: ..\..\..\model\gis\material\Cockburn_Sound_Material_005.shp
+GIS Layer assigned ID of 1
+2 DBF Fields (Name [#/Type/Length]): Material [1/N/10]  Name [2/C/10]  
+
+Closing GIS Layer 1 [..\..\..\model\gis\material\Cockburn_Sound_Material_005.shp]...
+Opening GIS Layer: ..\..\..\model\gis\material\2d_mat_Sed_001_R.shp
+GIS Layer assigned ID of 1
+2 DBF Fields (Name [#/Type/Length]): Material [1/N/8]  Mean_grain [2/C/20]  
+
+Closing GIS Layer 1 [..\..\..\model\gis\material\2d_mat_Sed_001_R.shp]...
+Opening GIS Layer: ..\..\..\model\gis\material\2d_mat_Sed_002_R.shp
+GIS Layer assigned ID of 1
+1 DBF Fields (Name [#/Type/Length]): Material [1/N/8]  
+
+Closing GIS Layer 1 [..\..\..\model\gis\material\2d_mat_Sed_002_R.shp]...
+Trying to open file: log\CSound_Sed_warmup_geo.csv ... OK. File unit: 101
+Trying to open file: log\CSound_Sed_warmup_geo_cellupdates.csv ... OK. File unit: 102
+Trying to open file: log\CSound_Sed_warmup_geo_nodestring.csv ... OK. File unit: 103
+
+Reading 3D layer specification file...
+Trying to open file: ..\..\..\model\geo\z_layer\SEP_zlayer_0p25.csv ... OK. File unit: 104
+Closing file unit: 104
+Trying to open file: ..\..\..\model\geo\z_layer\SEP_zlayer_0p25.csv ... OK. File unit: 104
+ Z columns read from csvfile. 52 lines successfully read.
+Closing file unit: 104
+Finished reading 3D layer specification file.
+
+Closing file unit: 101
+Closing file unit: 102
+Closing file unit: 103
+
+Found 27459 nodes.
+Found 30211 2D cells.
+Found 3 nodestrings.
+Mesh geometry file/s succesfully processed.
+
+Constructing domain, comprising:
+ 30211 2D cells.
+ 743807 3D cells.
+ 1447776 3D faces.
+Constructing node object...OK
+Constructing cell object...OK
+Constructing face object...OK
+Constructing gridmap object/s...
+  Extracting grid definition from ..\..\..\includes\..\bc_dbase\ROMS\ROMS_UTC+8_20130101_20131231_FILLED.nc
+Trying to open file: ..\..\..\includes\..\bc_dbase\ROMS\ROMS_UTC+8_20130101_20131231_FILLED.nc ...OK
+Closing file: ..\..\..\includes\..\bc_dbase\ROMS\ROMS_UTC+8_20130101_20131231_FILLED.nc
+    Constructing grid to mesh-cells map
+WARNING: 29540 model cells (  97.78 %) are within grid coverage.
+    Constructing grid to mesh-nodestring-1 map
+    Constructing grid to mesh-nodestring-2 map
+    Constructing grid to mesh-nodestring-3 map
+  Extracting grid definition from ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc
+Trying to open file: ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc ...OK
+Closing file: ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc
+    Constructing grid to mesh-cells map
+  Extracting grid definition from ..\..\..\includes\..\bc_dbase\waves\HIND_2013.nc
+Trying to open file: ..\..\..\includes\..\bc_dbase\waves\HIND_2013.nc ...OK
+Closing file: ..\..\..\includes\..\bc_dbase\waves\HIND_2013.nc
+    Constructing grid to mesh-cells map
+WARNING: 22060 model cells (  73.02 %) are within grid coverage.
+OK
+Constructing external mode objects...OK
+Echoing geometry data:
+Trying to open file: log\CSound_Sed_warmup_geo.nc ...OK.
+Closing file: log\CSound_Sed_warmup_geo.nc
+
+Successfully built model domain object/s.
+
+Attempting to initialise atmospheric module:
+Successfully initialised atmospheric module.
+
+Attempting to initialise external turbulence model:
+Initialising "GOTM" external turbulence module:
+Succesfully initialised external turbulence model.
+
+Attempting to initialise model structural configurations:
+Constructing struct object...
+Finished constructing struct object
+Successfully initialised model structural configurations.
+
+Attempting to initialise model boundary conditions:
+Constructing fvbc object...
+
+BC 1, Type=OBC_GRID
+Update dt=   900.0000    s
+BC Nodestring id = 1
+BC grid label = ROMS
+BC grid id = 1
+BC reference time = 01/01/1990 00:00:00
+BC time units = HOURS
+BC variable offset/s =  -4.20E-01  0.00E+00  0.00E+00  0.00E+00  0.00E+00
+BC variable scale/s =   1.00E+00  1.00E+00  1.00E+00  1.00E+00  1.00E+00
+BC default value/s =   NaN  NaN  NaN  NaN  NaN
+BC variable name/s =  TIME, SSH, U, V, SALINITY, TEMPERATURE,
+BC file header/s =  TIME, SURF_EL, WATER_U, WATER_V, SALINITY, WATER_TEMP,
+Trying to open file: ..\..\..\includes\..\bc_dbase\ROMS\ROMS_UTC+8_20130101_20131231_FILLED.nc ...OK
+TIME,SURF_EL,WATER_U,WATER_V,SALINITY,WATER_TEMP, variables found in netcdf file. 2911 timesteps successfully read.
+BC 1 is OK
+
+BC 2, Type=MSLP_GRID
+Update dt=   3600.000    s
+BC grid label = BARRA
+BC grid id = 2
+BC reference time = 01/01/1990 00:00:00
+BC time units = HOURS
+BC variable offset/s =   0.00E+00
+BC variable scale/s =   1.00E-02
+BC default value/s =   NaN
+BC variable name/s =  TIME, MSLP,
+BC file header/s =  LOCAL_TIME, MSLP,
+Trying to open file: ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc ...OK
+LOCAL_TIME,MSLP, variables found in netcdf file. 8756 timesteps successfully read.
+BC 2 is OK
+
+BC 3, Type=LW_RAD_GRID
+Update dt=   3600.000    s
+BC grid label = BARRA
+BC grid id = 2
+BC reference time = 01/01/1990 00:00:00
+BC time units = HOURS
+BC variable offset/s =   0.00E+00
+BC variable scale/s =   1.00E+00
+BC default value/s =   NaN
+BC variable name/s =  TIME, LW_RAD,
+BC file header/s =  LOCAL_TIME, LWSFCDOWN,
+Trying to open file: ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc ...OK
+LOCAL_TIME,LWSFCDOWN, variables found in netcdf file. 8756 timesteps successfully read.
+BC 3 is OK
+
+BC 4, Type=SW_RAD_GRID
+Update dt=   3600.000    s
+BC grid label = BARRA
+BC grid id = 2
+BC reference time = 01/01/1990 00:00:00
+BC time units = HOURS
+BC variable offset/s =   0.00E+00
+BC variable scale/s =   1.00E+00
+BC default value/s =   NaN
+BC variable name/s =  TIME, SW_RAD,
+BC file header/s =  LOCAL_TIME, SWSFCDOWN,
+Trying to open file: ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc ...OK
+LOCAL_TIME,SWSFCDOWN, variables found in netcdf file. 8756 timesteps successfully read.
+BC 4 is OK
+
+BC 5, Type=AIR_TEMP_GRID
+Update dt=   3600.000    s
+BC grid label = BARRA
+BC grid id = 2
+BC reference time = 01/01/1990 00:00:00
+BC time units = HOURS
+BC variable offset/s =  -2.73E+02
+BC variable scale/s =   1.00E+00
+BC default value/s =   NaN
+BC variable name/s =  TIME, AIR_TEMP,
+BC file header/s =  LOCAL_TIME, TEMP_SCRN,
+Trying to open file: ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc ...OK
+LOCAL_TIME,TEMP_SCRN, variables found in netcdf file. 8756 timesteps successfully read.
+BC 5 is OK
+
+BC 6, Type=W10_GRID
+Update dt=   3600.000    s
+BC grid label = BARRA
+BC grid id = 2
+BC reference time = 01/01/1990 00:00:00
+BC time units = HOURS
+BC variable offset/s =   0.00E+00  0.00E+00
+BC variable scale/s =   1.00E+00  1.00E+00
+BC default value/s =   NaN  NaN
+BC variable name/s =  TIME, W10_X, W10_Y,
+BC file header/s =  LOCAL_TIME, UWND10M, VWND10M,
+Trying to open file: ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc ...OK
+LOCAL_TIME,UWND10M,VWND10M, variables found in netcdf file. 8756 timesteps successfully read.
+BC 6 is OK
+
+BC 7, Type=PRECIP_GRID
+Subtype=1
+Update dt=   3600.000    s
+BC grid label = BARRA
+BC grid id = 2
+BC reference time = 01/01/1990 00:00:00
+BC time units = HOURS
+BC variable offset/s =   0.00E+00  0.00E+00
+BC variable scale/s =   2.40E-02  1.00E+00
+BC default value/s =   NaN  NaN
+BC variable name/s =  TIME, PRECIP, PRECIP_TEMP,
+BC file header/s =  LOCAL_TIME, PRECIP_RATE, ,
+Trying to open file: ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc ...OK
+WARNING: PRECIP_TEMP variable not found in netcdf file. Assigning a             NaN value.
+LOCAL_TIME,PRECIP_RATE, variables found in netcdf file. 8756 timesteps successfully read.
+BC 7 is OK
+
+BC 8, Type=REL_HUM_GRID
+Update dt=   3600.000    s
+BC grid label = BARRA
+BC grid id = 2
+BC reference time = 01/01/1990 00:00:00
+BC time units = HOURS
+BC variable offset/s =   0.00E+00
+BC variable scale/s =   1.00E+00
+BC default value/s =   NaN
+BC variable name/s =  TIME, REL_HUM,
+BC file header/s =  LOCAL_TIME, RELHUM,
+Trying to open file: ..\..\..\includes\..\bc_dbase\BARRA\BARRA_Spliced_20130101_20131231.nc ...OK
+LOCAL_TIME,RELHUM, variables found in netcdf file. 8756 timesteps successfully read.
+BC 8 is OK
+
+BC 9, Type=WAVE
+Update dt=   600.0000    s
+BC grid label = WAVE_GRID_NEST
+BC grid id = 3
+BC reference time = 01/01/1990 00:00:00
+BC time units = HOURS
+BC variable offset/s =   0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00
+BC variable scale/s =   1.00E+00  1.00E+00  1.00E+00  1.00E+00  1.00E+00  1.00E+00  1.00E+00  1.00E+00
+BC default value/s =   NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN
+BC variable name/s =  TIME, HSIGN, TPS, DIR, UBOT, TMBOT, FORCE_X, FORCE_Y, DEPTH,
+BC file header/s =  TIME, HSIG, TPSMOO, DIR, UBOT, TMBOT, WFORCE_X, WFORCE_Y, DEPTH,
+Trying to open file: ..\..\..\includes\..\bc_dbase\waves\HIND_2013.nc ...OK
+TIME,HSIG,TPSMOO,DIR,UBOT,TMBOT,WFORCE_X,WFORCE_Y,DEPTH, variables found in netcdf file. 8769 timesteps successfully read.
+BC 9 is OK
+
+BC 10, Type=WL
+Subtype=1
+BC Nodestring id = 2
+BC variable name/s = TIME, WL, SAL, TEMP, SED_1, SED_2
+BC file header/s = ISOTime, wl, Sal, Temp, zeroes, zeroes
+BC reference time = 01/01/1990 00:00:00
+BC time units = ISOTIME
+BC variable offset/s =   0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00
+BC variable scale/s =   1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00
+BC variable default/s =   NaN, NaN, NaN, NaN, NaN
+Trying to open file: ..\..\..\bc_dbase\swan_river\NAR_Inflow.csv ... OK. File unit: 101
+ISOTime, wl, Sal, Temp, zeroes, zeroes columns read from csvfile. 105193 lines successfully read.
+Closing file unit: 101
+BC 10 is OK
+
+BC 11, Type=WL
+Subtype=1
+BC Nodestring id = 3
+BC variable name/s = TIME, WL, SAL, TEMP, SED_1, SED_2
+BC file header/s = ISOTime, wl, Sal, Temp, zeroes, zeroes
+BC reference time = 01/01/1990 00:00:00
+BC time units = ISOTIME
+BC variable offset/s =   0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00
+BC variable scale/s =   1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00
+BC variable default/s =   NaN, NaN, NaN, NaN, NaN
+Trying to open file: ..\..\..\bc_dbase\swan_river\Canning_Inflow_Tide.csv ... OK. File unit: 101
+ISOTime, wl, Sal, Temp, zeroes, zeroes columns read from csvfile. 105193 lines successfully read.
+Closing file unit: 101
+BC 11 is OK
+
+BC 12, Type=QC
+Subtype=1
+Cell id=2174
+BC variable name/s = TIME, Q, SAL, TEMP, SED_1, SED_2
+BC file header/s = Date, Q, Salt, Temp, dummy, dummy
+BC reference time = 01/01/1990 00:00:00
+BC time units = ISOTIME
+BC variable offset/s =   0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00
+BC variable scale/s =   1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00
+BC variable default/s =   NaN, NaN, NaN, NaN, NaN
+Trying to open file: ..\..\..\includes\..\bc_dbase\discharges\TiWest20130101_20140101.csv ... OK. File unit: 101
+WARNING: DUMMY column not found in csv file. Assigning a value of             NaN
+WARNING: DUMMY column not found in csv file. Assigning a value of             NaN
+Date, Q, Salt, Temp columns read from csvfile. 2911 lines successfully read.
+Closing file unit: 101
+Vertical Distribution Type=1 (DEPTH)
+Trying to open file: ..\..\..\includes\..\bc_dbase\discharges\DischargeDepth_001.csv ... OK. File unit: 101
+ DEPTH, WEIGHT columns read from csvfile. 4 lines successfully read.
+Closing file unit: 101
+BC 12 is OK
+
+BC 13, Type=QC
+Subtype=1
+Cell id=1796
+BC variable name/s = TIME, Q, SAL, TEMP, SED_1, SED_2
+BC file header/s = Date, Q, Salt, Temp, dummy, dummy
+BC reference time = 01/01/1990 00:00:00
+BC time units = ISOTIME
+BC variable offset/s =   0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00
+BC variable scale/s =   1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00
+BC variable default/s =   NaN, NaN, NaN, NaN, NaN
+Trying to open file: ..\..\..\includes\..\bc_dbase\discharges\BP_Refinery20130101_20140101.csv ... OK. File unit: 101
+WARNING: DUMMY column not found in csv file. Assigning a value of             NaN
+WARNING: DUMMY column not found in csv file. Assigning a value of             NaN
+Date, Q, Salt, Temp columns read from csvfile. 2911 lines successfully read.
+Closing file unit: 101
+Vertical Distribution Type=1 (DEPTH)
+Trying to open file: ..\..\..\includes\..\bc_dbase\discharges\DischargeDepth_001.csv ... OK. File unit: 101
+ DEPTH, WEIGHT columns read from csvfile. 4 lines successfully read.
+Closing file unit: 101
+BC 13 is OK
+
+BC 14, Type=QC
+Subtype=1
+Cell id=423
+BC variable name/s = TIME, Q, SAL, TEMP, SED_1, SED_2
+BC file header/s = Date, Q, Salt, Temp, dummy, dummy
+BC reference time = 01/01/1990 00:00:00
+BC time units = ISOTIME
+BC variable offset/s =   0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00
+BC variable scale/s =   1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00
+BC variable default/s =   NaN, NaN, NaN, NaN, NaN
+Trying to open file: ..\..\..\includes\..\bc_dbase\discharges\KPS_A_B20130101_20140101.csv ... OK. File unit: 101
+WARNING: DUMMY column not found in csv file. Assigning a value of             NaN
+WARNING: DUMMY column not found in csv file. Assigning a value of             NaN
+Date, Q, Salt, Temp columns read from csvfile. 2911 lines successfully read.
+Closing file unit: 101
+Vertical Distribution Type=1 (DEPTH)
+Trying to open file: ..\..\..\includes\..\bc_dbase\discharges\DischargeDepth_001.csv ... OK. File unit: 101
+ DEPTH, WEIGHT columns read from csvfile. 4 lines successfully read.
+Closing file unit: 101
+BC 14 is OK
+
+BC 15, Type=QC
+Subtype=1
+Cell id=318
+BC variable name/s = TIME, Q, SAL, TEMP, SED_1, SED_2
+BC file header/s = Date, Q, Salt, Temp, dummy, dummy
+BC reference time = 01/01/1990 00:00:00
+BC time units = ISOTIME
+BC variable offset/s =   0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00
+BC variable scale/s =   1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00
+BC variable default/s =   NaN, NaN, NaN, NaN, NaN
+Trying to open file: ..\..\..\includes\..\bc_dbase\discharges\KPS_C_CPS20130101_20140101.csv ... OK. File unit: 101
+WARNING: DUMMY column not found in csv file. Assigning a value of             NaN
+WARNING: DUMMY column not found in csv file. Assigning a value of             NaN
+Date, Q, Salt, Temp columns read from csvfile. 2911 lines successfully read.
+Closing file unit: 101
+Vertical Distribution Type=1 (DEPTH)
+Trying to open file: ..\..\..\includes\..\bc_dbase\discharges\DischargeDepth_001.csv ... OK. File unit: 101
+ DEPTH, WEIGHT columns read from csvfile. 4 lines successfully read.
+Closing file unit: 101
+BC 15 is OK
+
+BC 16, Type=QC
+Subtype=1
+Cell id=2926
+BC variable name/s = TIME, Q, SAL, TEMP, SED_1, SED_2
+BC file header/s = Date, Q, Salt, Temp, dummy, dummy
+BC reference time = 01/01/1990 00:00:00
+BC time units = ISOTIME
+BC variable offset/s =   0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00
+BC variable scale/s =   1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00
+BC variable default/s =   NaN, NaN, NaN, NaN, NaN
+Trying to open file: ..\..\..\includes\..\bc_dbase\discharges\PSDP20130101_20140101.csv ... OK. File unit: 101
+WARNING: DUMMY column not found in csv file. Assigning a value of             NaN
+WARNING: DUMMY column not found in csv file. Assigning a value of             NaN
+Date, Q, Salt, Temp columns read from csvfile. 2911 lines successfully read.
+Closing file unit: 101
+Vertical Distribution Type=1 (DEPTH)
+Trying to open file: ..\..\..\includes\..\bc_dbase\discharges\DischargeDepth_001.csv ... OK. File unit: 101
+ DEPTH, WEIGHT columns read from csvfile. 4 lines successfully read.
+Closing file unit: 101
+BC 16 is OK
+
+BC 17, Type=QC
+Subtype=1
+Cell id=2175
+BC variable name/s = TIME, Q, SAL, TEMP, SED_1, SED_2
+BC file header/s = DATE, Q, SAL, TEMP, SED_1, SED_2
+BC reference time = 01/01/1990 00:00:00
+BC time units = ISOTIME
+BC variable offset/s =   0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00
+BC variable scale/s =  -1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00
+BC variable default/s =   NaN, NaN, NaN, NaN, NaN
+Trying to open file: ..\..\..\includes\..\bc_dbase\intakes\CSound_Apr2013_PRP_BP_Intake.csv ... OK. File unit: 101
+WARNING: SAL column not found in csv file. Assigning a value of             NaN
+WARNING: SED_1 column not found in csv file. Assigning a value of             NaN
+WARNING: SED_2 column not found in csv file. Assigning a value of             NaN
+DATE, Q, TEMP columns read from csvfile. 7201 lines successfully read.
+Closing file unit: 101
+Vertical Distribution Type=3 (HEIGHT)
+Trying to open file: ..\..\..\includes\..\bc_dbase\intakes\IntakeExtractionHeight_001.csv ... OK. File unit: 101
+ HEIGHT, WEIGHT columns read from csvfile. 6 lines successfully read.
+Closing file unit: 101
+BC 17 is OK
+
+BC 18, Type=QC
+Subtype=1
+Cell id=357
+BC variable name/s = TIME, Q, SAL, TEMP, SED_1, SED_2
+BC file header/s = DATE, Q, SAL, TEMP, SED_1, SED_2
+BC reference time = 01/01/1990 00:00:00
+BC time units = ISOTIME
+BC variable offset/s =   0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00
+BC variable scale/s =  -1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00
+BC variable default/s =   NaN, NaN, NaN, NaN, NaN
+Trying to open file: ..\..\..\includes\..\bc_dbase\intakes\CSound_Apr2013_PRP_VerveSouth_Intake.csv ... OK. File unit: 101
+WARNING: SAL column not found in csv file. Assigning a value of             NaN
+WARNING: SED_1 column not found in csv file. Assigning a value of             NaN
+WARNING: SED_2 column not found in csv file. Assigning a value of             NaN
+DATE, Q, TEMP columns read from csvfile. 7201 lines successfully read.
+Closing file unit: 101
+Vertical Distribution Type=3 (HEIGHT)
+Trying to open file: ..\..\..\includes\..\bc_dbase\intakes\IntakeExtractionHeight_001.csv ... OK. File unit: 101
+ HEIGHT, WEIGHT columns read from csvfile. 6 lines successfully read.
+Closing file unit: 101
+BC 18 is OK
+
+BC 19, Type=QC
+Subtype=1
+Cell id=436
+BC variable name/s = TIME, Q, SAL, TEMP, SED_1, SED_2
+BC file header/s = DATE, Q, SAL, TEMP, SED_1, SED_2
+BC reference time = 01/01/1990 00:00:00
+BC time units = ISOTIME
+BC variable offset/s =   0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00
+BC variable scale/s =  -1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00, 1.00E+00
+BC variable default/s =   NaN, NaN, NaN, NaN, NaN
+Trying to open file: ..\..\..\includes\..\bc_dbase\intakes\CSound_Apr2013_PRP_VerveNorth_Intake.csv ... OK. File unit: 101
+WARNING: SAL column not found in csv file. Assigning a value of             NaN
+WARNING: SED_1 column not found in csv file. Assigning a value of             NaN
+WARNING: SED_2 column not found in csv file. Assigning a value of             NaN
+DATE, Q, TEMP columns read from csvfile. 7201 lines successfully read.
+Closing file unit: 101
+Vertical Distribution Type=3 (HEIGHT)
+Trying to open file: ..\..\..\includes\..\bc_dbase\intakes\IntakeExtractionHeight_001.csv ... OK. File unit: 101
+ HEIGHT, WEIGHT columns read from csvfile. 6 lines successfully read.
+Closing file unit: 101
+BC 19 is OK
+
+Finished constructing fvbc object.
+
+Initialising ghost cell boundary conditions...
+Finished initialising ghost cell boundary conditions.
+
+Initialising face object boundary conditions...
+Finished initialising face object boundary conditions.
+
+Successfully initialised model boundary conditions.
+
+Attempting to intitialise Sediment Transport Module:
+Succesfully initialised Sediment Transport Module.
+
+Attempting to generate model initial conditions:
+Successfully generated model initial conditions.
+
+Attempting to initialise model output:
+
+Allocating output object memory:
+Trying to open file: ..\..\..\model\output_points\extraction_points.csv ... OK. File unit: 101
+WARNING: ID column not found in csv file. Assigning a value of             NaN
+WARNING: VERT_MIN column not found in csv file. Assigning a value of             NaN
+WARNING: VERT_MAX column not found in csv file. Assigning a value of             NaN
+ X, Y columns read from csvfile. 23 lines successfully read.
+Closing file unit: 101
+Trying to open file: ..\..\..\model\output_points\extraction_points.csv ... OK. File unit: 101
+Closing file unit: 101
+LABEL column found, attempting to read point labels
+Trying to open file: ..\..\..\model\output_points\extraction_points.csv ... OK. File unit: 101
+ LABEL columns read from csvfile. 23 lines successfully read.
+Closing file unit: 101
+Depth-Averaging for Parmelia_Bank                  :    0.000000     to    1.000000
+Depth-Averaging for North_CS                       :    0.000000     to    1.000000
+Depth-Averaging for Fathom_Bank                    :    0.000000     to    1.000000
+Depth-Averaging for Eastern_Shoal1                 :    0.000000     to    1.000000
+Depth-Averaging for Eastern_Shoal2                 :    0.000000     to    1.000000
+Depth-Averaging for Eastern_Shoal3                 :    0.000000     to    1.000000
+Depth-Averaging for Eastern_Shoal4                 :    0.000000     to    1.000000
+Depth-Averaging for Central_Basin1                 :    0.000000     to    1.000000
+Depth-Averaging for Central_Basin2                 :    0.000000     to    1.000000
+Depth-Averaging for Central_Basin3                 :    0.000000     to    1.000000
+Depth-Averaging for Central_Basin4                 :    0.000000     to    1.000000
+Depth-Averaging for Central_Basin5                 :    0.000000     to    1.000000
+Depth-Averaging for Central_Basin6                 :    0.000000     to    1.000000
+Depth-Averaging for Garden                         :    0.000000     to    1.000000
+Depth-Averaging for Central_Basin7                 :    0.000000     to    1.000000
+Depth-Averaging for Central_Basin8                 :    0.000000     to    1.000000
+Depth-Averaging for Central_Basin9                 :    0.000000     to    1.000000
+Depth-Averaging for Central_Basin10                :    0.000000     to    1.000000
+Depth-Averaging for Kwinanan                       :    0.000000     to    1.000000
+Depth-Averaging for Canning_River                  :    0.000000     to    1.000000
+Depth-Averaging for Narrows_bridge                 :    0.000000     to    1.000000
+Depth-Averaging for SwanRiverEstuary               :    0.000000     to    1.000000
+Depth-Averaging for SwanRiver_Fremantle            :    0.000000     to    1.000000
+Memory allocation OK.
+
+Trying to open file: log\CSound_Sed_warmup_geo_out.csv ... OK. File unit: 101
+Processing output requests:
+Processing request 1 is...
+OK.
+Processing request 2 is...
+OK.
+Processing request 3 is...
+Output point 1 is inside cell 23937.
+Output point 2 is inside cell 27185.
+Output point 3 is inside cell 19825.
+Output point 4 is inside cell 22948.
+Output point 5 is inside cell 26692.
+Output point 6 is inside cell 1959.
+Output point 7 is inside cell 1525.
+Output point 8 is inside cell 23564.
+Output point 9 is inside cell 13931.
+Output point 10 is inside cell 23458.
+Output point 11 is inside cell 11297.
+Output point 12 is inside cell 10869.
+Output point 13 is inside cell 5567.
+Output point 14 is inside cell 28469.
+Output point 15 is inside cell 16339.
+Output point 16 is inside cell 5537.
+Output point 17 is inside cell 19890.
+Output point 18 is inside cell 16582.
+Output point 19 is inside cell 2804.
+Output point 20 is inside cell 13526.
+Output point 21 is inside cell 10789.
+Output point 22 is inside cell 15835.
+Output point 23 is inside cell 3274.
+OK.
+Processing request 4 is...
+OK.
+
+Closing file unit: 101
+Opening output files...
+Trying to open file: ..\..\..\results\CSound_Sed_warmup_HYDROS.nc ...OK
+Trying to open file: ..\..\..\results\CSound_Sed_warmup_SED.nc ...OK
+Trying to open file: ..\..\..\results\CSound_Sed_warmup_POINTS.csv ... OK. File unit: 101
+Trying to open file: ..\..\..\results\CSound_Sed_warmup_FLUX.csv ... OK. File unit: 102
+
+Successfully initialised model output.
+
+FVC[0]: TUFLOW FVC version 0.4.1 (Jul 28 2021 17:07:52) - single precision - win64
+FVC[0]: Interrogating CUDA enabled GPUs
+FVC[0]: CUDA driver version = 11030
+FVC[0]: Found 1 CUDA enabled device(s)
+FVC[0]: Device 0, NVIDIA GeForce RTX 3070, has compute capability = 8.6
+FVC[0]: Adding device 0 to list of available CUDA devices
+FVC[0]: Hardware option = GPU
+FVC[0]: Requested device 0 found in available device list
+FVC[0]: incl_mslp = -1
+FVC[0]: vert_mesh_typ = 1
+FVC[0]: limiter3 = 2
+FVC[0]: nSed = 2
+FVC[0]: jSed1 = 6
+FVC[0]: nTrace = 0
+FVC[0]: jTrace1 = 0
+FVC[0]: bot_drag_model = 2
+FVC[0]: g = 9.810000
+FVC[0]: rho0 = 1030.000000
+FVC[0]: sal0 = 35.000000
+FVC[0]: temp0 = 20.000000
+FVC[0]: hDry = 0.005000
+FVC[0]: hWet = 0.100000
+FVC[0]: h3d = 1.000000
+FVC[0]: theta_bar = 0.100000
+FVC[0]: theta_M = 1.000000
+FVC[0]: theta_S = 0.500000
+FVC[0]: kappa = 0.410000
+FVC[0]: fcor_ = 0.000000
+FVC[0]: mslpa = 101325.000000
+FVC[0]: dZmin = 0.500000
+FVC[0]: alphaR12 = 1.000000
+FVC[0]: alphaR22 = 1.000000
+FVC[0]: alphaR32 = 1.000000
+FVC[0]: alphaR23 = 1.000000
+FVC[0]: alphaR33 = 1.000000
+FVC[0]: sedMin = 0.000000
+FVC[0]: sedMax = 100000.000000
+FVC[0]: hTransp = 0.100000
+FVC[0]: prandtl_0 = 0.740000
+FVC[0]: vert_mix_par_c1 = 0.000000
+FVC[0]: vert_mix_par_c2 = 0.000000
+FVC[0]: nuw = 0.000001
+FVC[0]: wave_par_hmin = 0.010000
+FVC[0]: Device 0 total GPU memory = 8192 Mb, free memory = 7132 Mb
+FVC[0]: Loading module FVC_kernels.ptx
+FVC[0]: Full module path: C:\TUFLOWFV\Exe\Trunk\2020.03.105\win_x64\FVC_kernels.ptx
+Running simulation
+Number of OpenMP threads=1
+Thread stacksize=4194304
+
+Entering timestep loop
+t = 02/01/2013 00:00:00.  dt =   0.000 /  0.000 s.  elapsed time =       0.0 s.
+    Updating sediment object. t = 02/01/2013 00:00:00.
+    Writing NETCDF output. t = 02/01/2013 00:00:00.
+    Writing NETCDF output. t = 02/01/2013 00:00:00.
+    Writing point timeseries output. t = 02/01/2013 00:00:00.
+    Writing nodestring flux output. t = 02/01/2013 00:00:00.
+t = 02/01/2013 00:15:05.  dt =   5.820 /  0.342 s.  elapsed time =      11.9 s.
+    Updating sediment object. t = 02/01/2013 00:15:05.
+t = 02/01/2013 00:30:07.  dt =   8.661 /  0.346 s.  elapsed time =      22.1 s.
+    Updating sediment object. t = 02/01/2013 00:30:07.
+t = 02/01/2013 00:45:03.  dt =   3.480 /  0.348 s.  elapsed time =      33.7 s.
+    Updating sediment object. t = 02/01/2013 00:45:03.
+t = 02/01/2013 01:00:02.  dt =   3.160 /  0.351 s.  elapsed time =      49.4 s.
+    Updating sediment object. t = 02/01/2013 01:00:02.
+    Writing NETCDF output. t = 02/01/2013 01:00:02.
+    Writing NETCDF output. t = 02/01/2013 01:00:02.
+    Writing point timeseries output. t = 02/01/2013 01:00:02.
+    Writing nodestring flux output. t = 02/01/2013 01:00:02.
+t = 02/01/2013 01:15:06.  dt =   6.336 /  0.352 s.  elapsed time =      63.0 s.
+    Updating sediment object. t = 02/01/2013 01:15:06.
