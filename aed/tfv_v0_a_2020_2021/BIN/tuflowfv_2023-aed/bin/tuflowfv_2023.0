@@ -1,0 +1,5 @@
+#!/bin/bash
+export THIS_DIR=$(dirname $(realpath "$0"))
+export LD_LIBRARY_PATH=$THIS_DIR/../lib/tuflowfv-2023.0:$LD_LIBRARY_PATH
+ulimit -s unlimited > /dev/null
+$THIS_DIR/tuflowfv-2023.0/tuflowfv-2023.0 "$@"
