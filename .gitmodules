@@ -1,3 +1,6 @@
 [submodule "csiem_model_tools"]
 	path = csiem_model_tools
 	url = https://github.com/AquaticEcoDynamics/csiem_model_tools
+[submodule "csiem_model_tfvaed_1.0"]
+	path = csiem_model_tfvaed_1.0
+	url = https://github.com/AquaticEcoDynamics/csiem_model_tfvaed_1.0
